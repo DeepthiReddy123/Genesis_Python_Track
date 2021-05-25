@@ -2,7 +2,8 @@ import pytest
 import sys
 import warnings
 import main
-from main import Sum ,main ,Admin ,user ,bookingdetails ,record , status ,adminroom,roomtypefunction ,acavailability , nonacavailability , splacavailability
+from main import Sum ,main ,Admin ,user ,bookingdetails ,record , status ,adminroom,roomtypefunction ,acavailability , nonacavailability , splacavailability,status
+
 
 def test_no1():
     a=4
@@ -53,5 +54,50 @@ def test_no8():
 
 def test_no9():
     z=1
-    assert status()==adminroom()        
+    assert status()==adminroom()      
 
+def test_no10():
+    romty=3
+    assert roomtypefunction()==nonacavailability()
+
+def test_no11():
+    romty=0
+    assert roomtypefunction()==main()
+
+def test_no12():
+    romty=3
+    assert roomtypefunction()==splacavailability()
+
+
+def test_no13():
+    romty=3
+    assert roomtypefunction()==splacavailability()
+
+
+def test_no14():
+    go=3
+    assert record()==status()
+
+def test_no15():
+    go=0
+    assert record()==status()
+
+def test_no16():
+    go=3
+    assert record()==main()
+
+def test_no17():
+    z=1
+    assert status()==adminroom()
+
+def test_no18():
+    z=2
+    assert status()==record()
+
+def test_no19():
+    z=5
+    assert status()==main()
+
+def test_no20():
+    z=5
+    assert status()==record()
